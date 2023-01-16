@@ -1,0 +1,14 @@
+@mixin transition($property: all, $duration: 0.3s, $animation: ease-in-out) {
+  -webkit-transition: $property $duration $animation;
+  -moz-transition: $property $duration $animation;
+  -ms-transition: $property $duration $animation;
+  -o-transition: $property $duration $animation;
+  transition: $property $duration $animation;
+}
+
+@mixin flex_center_center($value: row) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $value;
+}

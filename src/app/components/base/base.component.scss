@@ -1,0 +1,21 @@
+@import '/src/scss/mixins';
+
+.base {
+  padding: 40px;
+
+  .base__header,
+  .base__info-text {
+    text-align: center;
+  }
+
+  .base__header,
+  .base__info-text,
+  .base__search {
+    margin-bottom: 30px;
+
+  }
+
+  .base__search {
+    @include flex-center-center;
+  }
+}

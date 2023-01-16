@@ -1,0 +1,27 @@
+@import '/src/scss/mixins';
+
+.flight-details {
+  padding: 40px;
+
+  .flight-details__header,
+  .flight-details__form,
+  .flight-details__submit {
+    @include flex-center-center;
+  }
+
+  .flight-details__header {
+    margin-bottom: 30px;
+    position: relative;
+
+    app-button {
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  .flight-details__form {
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+}

@@ -1,0 +1,24 @@
+<div class="table__container">
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let head of headTemplates">
+          <ng-container *ngTemplateOutlet="head; context: { $implicit: head }"></ng-container>
+        </th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td *ngFor="let cell of cellTemplates">
+          <p>
+            <ng-container *ngTemplateOutlet="cell; context: { $implicit: item }"></ng-container>
+          </p>
+        </td>
+        <td>
+          <app-button type="secondary" text="Detalji" (click)="onEditClick(item)"></app-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
