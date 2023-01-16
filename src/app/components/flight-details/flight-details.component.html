@@ -1,0 +1,74 @@
+<div class="flight-details">
+  <div class="flight-details__header">
+    <app-button type="secondary" text="Go back" routerLink="../"></app-button>
+    <h1>Flight details</h1>
+  </div>
+
+  <form [formGroup]="flightDetailsForm">
+
+    <div class="flight-details__form">
+
+      <div class="form__first-column">
+        <app-input formControlName="type" labelText="Type" [required]="true" placeholder="Enter type"></app-input>
+
+        <app-input formControlName="subType" labelText="SubType" [required]="true"
+          placeholder="Enter sub type"></app-input>
+
+        <app-input formControlName="name" labelText="Name" [required]="true" placeholder="Enter name"></app-input>
+
+        <app-input formControlName="detailedName" labelText="DetailedName" [required]="true"
+          placeholder="Enter detailed name"></app-input>
+
+        <app-input formControlName="timeZoneOffset" labelText="Time zone offset" [required]="true"
+          placeholder="Enter time zone offset"></app-input>
+
+        <app-input formControlName="iataCode" labelText="Iata code" [required]="true"
+          placeholder="Enter Iata code"></app-input>
+
+        <form formGroupName="geoCode">
+          <app-input formControlName="latitude" labelText="Latitude" [required]="true"
+            placeholder="Enter latitude"></app-input>
+
+          <app-input formControlName="longitude" labelText="Longitude" [required]="true"
+            placeholder="Enter longitude"></app-input>
+        </form>
+      </div>
+
+      <div class="form__second-column">
+
+        <form formGroupName="address">
+          <app-input formControlName="cityName" labelText="City name" [required]="true"
+            placeholder="Enter city name"></app-input>
+
+          <app-input formControlName="cityCode" labelText="City code" [required]="true"
+            placeholder="Enter city code"></app-input>
+
+          <app-input formControlName="countryName" labelText="Country name" [required]="true"
+            placeholder="Enter country name"></app-input>
+
+          <app-input formControlName="countryCode" labelText="Country code" [required]="true"
+            placeholder="Enter country code"></app-input>
+
+          <app-input formControlName="regionCode" labelText="Region code" [required]="true"
+            placeholder="Enter region code"></app-input>
+        </form>
+
+        <form formGroupName="analytics">
+
+          <form formGroupName="travelers">
+            <app-input formControlName="score" labelText="Score" [required]="true"
+              placeholder="Enter score"></app-input>
+          </form>
+        </form>
+
+      </div>
+
+    </div>
+  </form>
+
+  <div class="flight-details__submit">
+    <app-button type="primary" text="Save to local storage" (click)="saveFlightDetails()"></app-button>
+  </div>
+
+
+</div>

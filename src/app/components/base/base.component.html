@@ -1,0 +1,26 @@
+<div class="base">
+  <h1 class="base__header">Flight Explorer</h1>
+
+  <div class="base__search">
+    <form [formGroup]="searchForm">
+
+      <app-input labelText="Destination" placeholder="ex. Zagreb" formControlName="search"
+        (ngModelChange)="findFlights()"></app-input>
+    </form>
+  </div>
+
+  <div class="base__search-results">
+    <p *ngIf=" errorMessage != null" class="base__info-text">{{ errorMessage | sameString }}</p>
+
+    <div *ngIf="(subject$ | async)?.length > 0">
+      <app-table [data]="subject$ | async" #table (onEditClicked)="editFlight($event.id)">
+        <app-table-column>
+          <ng-template #head> Name </ng-template>
+          <ng-template #cell let-item>
+            {{ item.address.cityName }}
+          </ng-template>
+        </app-table-column>
+      </app-table>
+    </div>
+  </div>
+</div>

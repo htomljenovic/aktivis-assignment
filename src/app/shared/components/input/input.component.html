@@ -1,0 +1,15 @@
+<div class="input-container">
+  <label class="input-label" *ngIf="!!labelText">{{ labelText}} {{ required ? "*" : "" }}</label>
+
+  <input #input [value]="value" [disabled]="disabled" (input)="onChange($any($event.target).value)" (blur)="onTouched()"
+    (change)="value = $any($event.target).value" [required]="required" [placeholder]="placeholder || ''"
+    (keyup.enter)="enterPressed()" (keydown.arrowup)="upArrowPressed($event)"
+    (keydown.arrowdown)="downArrowPressed($event)" />
+
+  <!-- ERRORS -->
+  <div class="input-container__errors">
+    <div [ngClass]="{ 'error': true }" *ngIf="hasError()" [@showHide]>
+      {{ getError() }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+@import "/src/scss/variables";
+
+.input-container {
+  position: relative;
+  margin-bottom: 12px;
+  height: 71px;
+
+  .input-label {
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  input {
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    background: $primary-blue;
+    padding: 6px 0px 6px 10px;
+    outline: none;
+    font-size: 16px;
+
+    &,
+    &::placeholder {
+      letter-spacing: 0.6px;
+    }
+
+    &::placeholder {
+      color: rgba($color: $white, $alpha: 0.7);
+    }
+  }
+
+  .input-container__errors {
+    color: $error-red;
+    font-size: 14px;
+
+    .error {
+      display: block;
+    }
+  }
+
+}
